@@ -1,0 +1,30 @@
+[project]
+name = "datasette-column-sum"
+version = "0.1a0"
+description = "Sum the values in numeric Datasette columns"
+readme = "README.md"
+authors = [{name = "Simon Willison"}]
+license = {text = "Apache-2.0"}
+classifiers=[
+    "Framework :: Datasette",
+    "License :: OSI Approved :: Apache Software License"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "datasette>=1.0a12"
+]
+
+[project.urls]
+Homepage = "https://github.com/datasette/datasette-column-sum"
+Changelog = "https://github.com/datasette/datasette-column-sum/releases"
+Issues = "https://github.com/datasette/datasette-column-sum/issues"
+CI = "https://github.com/datasette/datasette-column-sum/actions"
+
+[project.entry-points.datasette]
+column_sum = "datasette_column_sum"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
