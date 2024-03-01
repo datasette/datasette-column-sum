@@ -37,9 +37,8 @@ document.addEventListener('datasette_init', function(ev) {
 });
 """
 
+
 @hookimpl
 def extra_body_script(database, table):
     if database and table:
-        return {
-            "script": JS.replace("{database}", database).replace("{table}", table)
-        }
+        return {"script": JS.replace("{database}", database).replace("{table}", table)}
